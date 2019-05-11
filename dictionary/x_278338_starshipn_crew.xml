@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Crew" max_length="40" name="x_278338_starshipn_crew" type="collection">
+        <element attributes="second_field=rank,first_field=full_name" label="Display name" max_length="40" name="display_name" type="composite_field"/>
+        <element label="First name" max_length="40" name="first_name" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return current.last_name+', '+current.first_name;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Full name" max_length="100" name="full_name" type="string" virtual="true"/>
+        <element label="ID" max_length="40" name="id" type="string"/>
+        <element label="Last name" max_length="40" name="last_name" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Rank" max_length="40" name="rank" type="string"/>
+        <element label="Salary" max_length="20" name="salary" type="currency"/>
+        <element label="Ship" max_length="32" name="ship" reference="x_278338_starshipn_ship" type="reference"/>
+        <index name="index">
+            <element name="ship"/>
+        </index>
+    </element>
+</database>
